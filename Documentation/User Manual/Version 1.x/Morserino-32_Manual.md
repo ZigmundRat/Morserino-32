@@ -5,6 +5,8 @@
 
 ###A multi-functional Morse Code Device, perfect for Learning and Training
 
+This manual reflects firmware Version 1.4
+
 
 ![](Images/Morserino.jpg)
 <div style="page-break-after: always;"></div>
@@ -34,13 +36,13 @@
 
 ##Powering On and Off / Charging the Battery
 
-If you want to use the devie with USB power, just plug a USB cabel in from virtually any USB charger (it consumes a max of 200 mA, so any 5V charger will do).
+If you want to use the device with a USB power, just plug a USB cable in from virtually any USB charger (it consumes a max of 200 mA, so any 5V charger will do).
 
 If you run it from battery power, slide the sliding switch to the ON position.
 
 When the device is off but with the battery connected (sliding power switch is on), it is in deep sleep in reality: almost all functions of the microcontroller are turned off, and power consumption is minimal (less than 5% of normal operation).
 
-To turn the device on from deep sleep, just press the RED (Power/Vol/Scroll) button momentarily. You will see a start screen for a couple of seconds. The only interesting bit of the start screen is at its very bottom: you will see an indication of how much battery power is still left. If this goes way towards empty, you should connect your device to a USB power source. (The battery will be drained even if you never turn the device on - although this is rather minimal in its deep sleep status, a full battery will be empty after a couple of days. Therrefore, if you intend not to use the Morserino for a longer period of time, disconnect the battery from the device using the slider switch at the back...)
+To turn the device on from deep sleep, just press the RED (Power/Vol/Scroll) button momentarily. You will see a start screen for a couple of seconds. The only interesting bit of the start screen is at its very bottom: you will see an indication of how much battery power is still left. If this goes way towards empty, you should connect your device to a USB power source. (The battery will be drained even if you never turn the device on - although this is rather minimal in its deep sleep status, a full battery will be empty after a couple of days. Therefore, if you intend not to use the Morserino for a longer period of time, disconnect the battery from the device using the slider switch at the back...)
 
 If the battery voltage is dangerously low when you attempt to turn it on, an empty battery symbol will show on the scren and the device will refuse to boot up. if you see this symbol, you should begin charging your battery as soon as possible.
 
@@ -94,7 +96,7 @@ All WiFi functions end with the Morserino32 re-booting after these functions hav
 
 ##The Display
 
-The display is divided into two main sections: on top is the status line, that gives important information according to the current state of the device, and below is an **area of three scrolling lines** where the generated Morse code characters are shown in clear text.  All characerts from Morse code are shown in lower case, for better readability; Pro signs are shown as letters in brackets, like `<ka>` or `<sk>`. In addition, when in Echo Trainer modus (see below), the result of your attempt to enter the correct Morse code is shown as `ERR` or `OK` (together with some audible signals).
+The display is divided into two main sections: on top is the status line, that gives important information according to the current state of the device, and below is an **area of three scrolling lines** where the generated Morse code characters are shown in clear text.  All characters from Morse code are shown in lower case, for better readability; Pro signs are shown as letters in brackets, like `<ka>` or `<sk>`. In addition, when in Echo Trainer modus (see below), the result of your attempt to enter the correct Morse code is shown as `ERR` or `OK` (together with some audible signals).
 
 Although only three lines of scrolling text are shown, there is internally a buffer of 15 lines -- after a long press of  the RED (Vol/Scroll) button you can use the encoder to scroll back and make the previous lines visible again. This also works while you are in any of the modi and screen output is being generated - nothing is lost and the display reverts to its normal behaviour once you leave the scroll mode.
 
@@ -351,7 +353,7 @@ Bold values are standard or recommended ones. When called from the Start Menu, a
 | -------------- | --------------------------------- | ------ |
 | Encoder Click | Turning the encoder may generate a short tone burst, or be silent   | Off / On |
 | Tone Pitch Hz   | The frequency of the side tone, in Hz | A series of tones between 233 and 932 Hz, corresponding to the musical notes of the B flat major scale from b flat to b'' flat (2 octaves) |
-| Paddle        | Allows selection of external paddles, or the built-in touch paddles | Touch Paddle / Ext. Paddle |
+| External Pol.        | Allows to reverse the polarity of an external paddle. Use this if your external paddle is wired "the wrong way", so that dots and dashed of ineral and external paddle are all at the same side. | Normal / Reversed|
 | Paddle Polarity | Defines which paddle is for dits, and which for dahs | ` _. dah-dit` / **`._ di-dah`**  |
 | Latency | Defines, how long after generating the current element (dot or dash) the paddles will be „deaf“. If it is 0, you have to release the paddle while the last element is still „on“. If set to 7, the paddles will only react to a paddle press after 7/8 of a dot length. | A value between 0 and 7, meaning 0/8 to 7/8 of a dot length (default is **4**, i.e. half a dot length). |
 | Keyer Mode     | Sets the Iambic Mode (A or B),  Ultimatic or Non-Squeeze; see below  | Curtis A / Curtis B / Ultimatic / Non-Squeeze |
@@ -366,10 +368,11 @@ Bold values are standard or recommended ones. When called from the Start Menu, a
 | Length Calls | Select the maximum length of generated call signs | Unlimited / max. 3 -- max. 6 |
 | Length Abbrev | Select the maximum length of the randomly generated common CW abbreviations and Q groups | Unlimited / max. 2 -- max. 6 |
 | Length Words | Select the maximum length of the randomly generated common English words | Unlimited / max. 2 -- max. 6 |
-| Trainer Disp | Select, how the trainer should display what it generates | Display off / **Char by Char** / Word by word |
+| CW Gen Displ | Select, how the trainer should display what it generates | Display off / **Char by Char** / Word by word |
 | Each Word 2x | In the CW Trainer modus, each "word" (characters between spaces) will be output twice, as a help to learn to copy by ear. | **Off** / On |
 | Randomize File | If set to „On“, file player will skip n words after each word sent (n = random number between 0 and 255) |  **Off** / On |
 |Echo Repeats    | Here you decide, how often a word is repeated when the response is either too late or erroneous, before a new word is being generated. If the value is 0, then the next word will always be a new one, regardless if you responded correctly or not.                 | 0 -- 6 / Forever |
+|Echo Prompt    | This defines how you are prompted in Echo Trainer mode. The possible settings are: „Sound only“ (default; the standard behavior in previous versions; best for learning to copy in your head), „Display only“ (the word you are supposed to enter is shown on the screen, no audible code is generated; good for training paddle input), and „Sound & Display“, i.e you hear the prompt AND you can see it on the display.               | **Sound only** / Display only / Sound&Displ |
 | Confrm. Tone  | Here you define if an audible confirmation tone should be sounded in Echo Trainer modus. If you turn it off, the device just repeats the prompt when the response was wrong, or sends a new prompt. The visual indication of "OK" or "ERR" will still be visible when the tone is turned off. | **On** / Off |
 |Key ext TX        | Here you determine, if a connected Transmitter will be keyed when you use the device | Never / CW Keyer only / Keyer&Trainer |
 | Send via LoRa | If set to ON, whatever the CW generator generates will also transmitted via LoRa - so you can have one device generating something, and several others receiving the same sequence (using the LoRa Trx modus). Be aware that you must have an antenna connected when you transmit via LoRa, otherwise the LoRa transceiver will eventually be destroyed!| LoRa Tx ON / **LoRa Tx OFF** |
@@ -378,6 +381,7 @@ Bold values are standard or recommended ones. When called from the Start Menu, a
 | Koch Sequence | This determines the sequence of characters when you use the Koch method for learning and training. | **M32 / JLMC (Just Learn Morse Code)**  /  LCWO |
 | Time Out | If the time specified there passes without any display updates, the device will go into deep sleep mode. You can restart it by pressing the RED button. | No timeout / **5 min** / 10 min / 15 min |
 | Quick Start | Allows you to bypass the intial menu selection, i.e.  at startup the device will immediately begin executing the modus that had been selected before last shutdown. | ON / **OFF** |
+| Auto Stop | Stops the generating of morse characters in CW Generator and Koch Generator modes to help with learning head copying. Continue by touching the paddle or pressing the rotary encoder.| ON / **OFF** |
 
 
 
@@ -387,7 +391,7 @@ Bold values are standard or recommended ones. When called from the Start Menu, a
 
 | | | | |
 | ----- |---  |--- | --- |
-| Encoder Click | Tone Pitch Hz   |  Paddle        |  Paddle Polarity | 
+| Encoder Click | Tone Pitch Hz   |  External Pol.        |  Paddle Polarity | 
 | Latency | Keyer Mode     |  CurtisB DahT% | CurtisB DitT% |  
 | AutoChar Spce   | Time Out | Quick Start |
 
@@ -418,10 +422,11 @@ This parameter allows you to set any behavior between Curtis A and original Curt
 
 | | | | |
 | ---| ---|---|---|
-| Encoder Click | Tone Pitch Hz   | Paddle        | Interword Spc |
+| Encoder Click | Tone Pitch Hz   | External Pol.        | Interword Spc |
 | Interchar Spc | Random Groups | Length Rnd Gr | Length Calls | 
-| Length Abbrev |Length Words | Trainer Disp | Each Word 2x | 
+| Length Abbrev |Length Words | CW Gen Displ | Each Word 2x | 
 |Key ext TX        | Send via LoRa |  Time Out | Quick Start |
+| Auto Stop |
 
 
 
@@ -441,31 +446,32 @@ The ARRL and some Morse code training programs use something they call *"Farnswo
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   |Paddle        | Interword Spc | 
-| Interchar Spc | Trainer Disp | Randomize File | Each Word 2x | Key ext TX        |
-| Send via LoRa |  Time Out | Quick Start |
+| Encoder Click | Tone Pitch Hz   |External Pol.        | Interword Spc | 
+| Interchar Spc | CW Gen Displ | Randomize File | Each Word 2x | Key ext TX        |
+| Send via LoRa |  Time Out | Quick Start | Auto Stop |
 
 
 #### Parameters in ***Echo Trainer*** modus
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click |  Tone Pitch Hz   | Paddle        | Paddle Polarity |
+| Encoder Click |  Tone Pitch Hz   | External Pol.        | Paddle Polarity |
 | Latency |Keyer Mode     |  CurtisB DahT% |  CurtisB DitT% | 
 |AutoChar Spce   | Tone Shift |  Interword Spc |  Interchar Spc | 
 | Random Groups |Length Rnd Gr | Length Calls | Length Abbrev |
-| Length Words | Echo Repeats    | Confrm. Tone  | Time Out |
-| Quick Start |
+| Length Words | Echo Repeats   | Echo Prompt | Confrm. Tone  | 
+|Time Out | Quick Start |
 
 
 #### Parameters in ***Echo Trainer - File Player*** modus
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   |  Paddle        |  Paddle Polarity | 
+| Encoder Click | Tone Pitch Hz   |  External Pol.        |  Paddle Polarity | 
 | Latency |Keyer Mode     |  CurtisB DahT% | CurtisB DitT% |
 | AutoChar Spce   | Tone Shift |  Interword Spc | Interchar Spc |
-| Randomize File |  Time Out |Quick Start |
+| Randomize File | Echo Repeats   | Echo Prompt | Confrm. Tone  | 
+|  Time Out |Quick Start |
 
 <div style="page-break-after: always;"></div>
 
@@ -473,26 +479,27 @@ The ARRL and some Morse code training programs use something they call *"Farnswo
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   | Paddle        | Interword Spc | 
+| Encoder Click | Tone Pitch Hz   | External Pol.        | Interword Spc | 
 | Interchar Spc | Length Rnd Gr | Length Abbrev | Length Words | 
-| Trainer Disp | Each Word 2x | Key ext TX     |  Send via LoRa | 
-| Koch Sequence | Time Out | Quick Start |
+| CW Gen Displ | Each Word 2x | Key ext TX     |  Send via LoRa | 
+| Koch Sequence | Time Out | Quick Start | Auto Stop |
 
 #### Parameters in ***Koch Trainer - Echo Trainer*** modus
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   | Paddle        |  Paddle Polarity | 
+| Encoder Click | Tone Pitch Hz   | External Pol.        |  Paddle Polarity | 
 |Latency | Keyer Mode     |  CurtisB DahT% |  CurtisB DitT% |  
 |AutoChar Spce   | Tone Shift |  Interword Spc | Interchar Spc |
 | Length Rnd Gr |  Length Abbrev |  Length Words | Echo Repeats    |  
-|Confrm. Tone  | Koch Sequence |  Time Out | Quick Start |
+| Echo Prompt |Confrm. Tone  | Koch Sequence |  Time Out | 
+| Quick Start |
 
 #### Parameters in ***Transceiver - LoRa Trx*** modus
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   | Paddle        |  Paddle Polarity |
+| Encoder Click | Tone Pitch Hz   | External Pol.        |  Paddle Polarity |
 | Latency | Keyer Mode     |  CurtisB DahT% |  CurtisB DitT% |  
 |AutoChar Spce   | Tone Shift |  Time Out | Quick Start |
 
@@ -500,7 +507,7 @@ The ARRL and some Morse code training programs use something they call *"Farnswo
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   |  Paddle        |  Paddle Polarity |
+| Encoder Click | Tone Pitch Hz   |  External Pol.        |  Paddle Polarity |
 | Latency |Keyer Mode     | CurtisB DahT% |  CurtisB DitT% |
 |AutoChar Spce   |  Tone Shift |  Bandwidth |  Time Out |
 | Quick Start |

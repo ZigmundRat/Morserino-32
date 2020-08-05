@@ -4,6 +4,7 @@
 
 ###Ein multi-funktionales Morsegerät, perfekt zum Lernen und Trainieren
 
+Dieses Handbuch beschreibt Firmware Version 1.4
 
 ![](Images/Morserino.jpg)
 <div style="page-break-after: always;"></div>
@@ -33,22 +34,22 @@
 
 ##Ein- und Ausschalten / Laden des Akkus
 
-Falls du das Gerät mitEnergie vom USB Anschluss betreiben willst, verbinde es mit einem USB Kabel mit einem beliebigen 5V USB Ladegerät (es wird nur mit max. 200 mA belastet werden).
+Falls du das Gerät mit Energie vom USB-Anschluss betreiben willst, verbinde es mit einem USB-Kabel mit einem beliebigen 5V-USB-Ladegerät (es wird nur mit max. 200 mA belastet werden).
 
-Soll es mit Akku betrieben werden, stelle den Schiebeschalter auf di "ON" Position zum Einschalten.
+Soll es mit Akku betrieben werden, stelle den Schiebeschalter zum Einschalten auf die Position "ON".
 
 Wenn das Gerät ausgeschaltet, aber die Batterie angeschlossen ist (der Schiebeschalter ist eingeschaltet), befindet es sich tatsächlich im Tiefschlaf: Fast alle Funktionen des Mikrocontrollers sind deaktiviert, und der Energieverbrauch ist minimal (weniger als 5% des normalen Betriebsstroms). 
 
-Um das Gerät aus dem Tiefschlaf einzuschalten, drücke kurz die ROTE Taste (Power / Vol / Scroll). Es erscheint ein Startbildschirm für einige Sekunden. Der einzig interessante Punkt des Startbildschirms ist ganz unten: Man sieht einen Hinweis darauf, wie viel Akkukapazität noch vorhanden ist. Wenn diese dem Ende entgegen geht, sollte man das Gerät an eine USB-Stromquelle anschließen. (Der Akku wird auch leer, wenn man das Gerät im Tiefschlaf belässt:  nach einigen Tagen wird der Akku leer.) Wenn du also nicht vorhast, den Morserino in den nächsten Tagen wieder zu verwenden, trenne besser mit dem Schiebeschalter auf der Rückseite die Batterie vom Gerät...)
+Um das Gerät aus dem Tiefschlaf einzuschalten, drücke kurz die ROTE Taste (Power / Vol / Scroll). Es erscheint ein Startbildschirm für einige Sekunden. Der einzig interessante Punkt des Startbildschirms ist ganz unten: Man sieht einen Hinweis darauf, wie viel Akkukapazität noch vorhanden ist. Wenn diese dem Ende entgegen geht, sollte man das Gerät an eine USB-Stromquelle anschließen. (Der Akku wird auch leer, wenn man das Gerät im Tiefschlaf belässt:  nach einigen Tagen wird der Akku leer.) Wenn du also nicht vorhast, den Morserino in den nächsten Tagen wieder zu verwenden, trenne besser mit dem Schiebeschalter auf der Rückseite die Batterie vom Gerät.
 
 Wenn die Batteriespannung gefährlich niedrig ist, wird beim Einschalten ein leeres Batteriesymbol auf dem Bildschirm angezeigt, und das Gerät lässt sich nicht starten. Wenn dieses Symbol gezeigt wird, sollte man so bald wie möglich mit dem Laden des Akkus beginnen.
 
 Um das Gerät von der Batterie zu trennen ( = Ausschalten, außer es hängt an einer USB Stromversorgung), stelle den Schiebeschalter auf die "OFF" Position.
 
-Um das Gerät in den Tiefschlaf zu versetzen), gibt es zwei Möglichkeiten:
+Um das Gerät in den Tiefschlaf zu versetze), gibt es zwei Möglichkeiten:
 
 * Wähle im Hauptmenü die Option "Go to Sleep".
-* Falls in den Parametern ein "Time Out" eingestellt wurde: Tue nichts. Falls es keine Veränderungen am Display gibt, schaltet sich das Gerät nach Ablauf der vorgegebene Time-Out Zeit aus und geht in den Tiefschlaf.
+* Falls in den Parametern ein "Time Out" eingestellt wurde: Tue nichts. Falls es keine Veränderungen am Display gibt, schaltet sich das Gerät nach Ablauf der vorgegebenen Time-Out Zeit aus und geht in den Tiefschlaf.
 
 **Um den Akku aufzuladen**, verbinde ihn mit einem USB-Kabel mit einer zuverlässigen USB-5-V-Stromquelle wie z.B. deinem Computer oder einem USB-Ladegerät (z.B. eines Mobiltelefons). 
 **Vergewissere dich, dass der Schiebeschalter des Geräts zum Laden der Batterie  *eingeschaltet ist***. Wenn der Akku vom Gerät getrennt ist, kann er nicht geladen werden. Während des Ladevorgangs leuchtet die orangefarbene LED am ESP32-Modul hell. Wenn der Akku nicht angeschlossen ist, leuchtet diese LED nicht hell, sondern blinkt nervös oder leuchtet gedimmt.
@@ -57,13 +58,13 @@ Wenn der Akku vollständig aufgeladen ist, leuchtet die orangefarbene LED nicht 
 
 Man das Gerät natürlich immer verwenden, wenn es über USB mit Strom versorgt wird, ob der Akku nun gerade aufgeladen wird oder nicht.
 
-**Um eine Tiefentladung des Akkus zu vermeiden, sollte der Morserino-32 für längere Pausen immer mit dem Schiebeschalter abgeschaltet werden, und sollte nicht über sehr lange Zeit im Sleep Modus verbleiben** (1 bis 2 Tage ist ok, wenn die Batterie gut geladen war; ein voll geladener 600 mAh Akku wirdd innerhalb von 3-4 Tagen bis auf eine Spannung von 3,2 V entladen).
+**Um eine Tiefentladung des Akkus zu vermeiden, sollte der Morserino-32 für längere Pausen immer mit dem Schiebeschalter abgeschaltet werden, und sollte nicht über sehr lange Zeit im Sleep Modus verbleiben** (1 bis 2 Tage ist ok, wenn die Batterie gut geladen war; ein voll geladener 600 mAh Akku wird innerhalb von 3-4 Tagen bis auf eine Spannung von 3,2 V entladen).
 
 Das Heltec Modul hat eine Ladeelektronik an Bord, welche eine Überladung verhindert, aber es hat keine Schutzvorrichtung gegen Tiefentladung! **Tiefentladung führt rasch zu verminderter Akkukapazität und sogar zum vorzeitigen Tod des Akkus!**
 
 
 ## Verwenden des Drehgebers und der ROTEN Power / Vol / Scroll-Taste
-Die Auswahl der verschiedenen Modi und das Einstellen aller Arten von Parametern erfolgt mit dem Drehknopf bzw. dem **SCHWARZEN Knopf**. *Drehen* des Drehgebers führt durch die Optionen oder Werte, *das Klicken* des Knopfs wählt eine Option oder einen Wert aus oder führt zur nächsten Ebene des Menüs (es gibt bis zu drei Ebenen im Menü) und a *langes Drücken* beendet den aktuellen Status und führt eine Ebene nach oben bzw. zurück.
+Die Auswahl der verschiedenen Modi und das Einstellen aller Arten von Parametern erfolgt mit dem Drehknopf bzw. dem **SCHWARZEN Knopf**. *Drehen* des Drehgebers führt durch die Optionen oder Werte, *das Klicken* des Knopfs wählt eine Option oder einen Wert aus oder führt zur nächsten Ebene des Menüs (es gibt bis zu drei Ebenen im Menü) und *langes Drücken* beendet den aktuellen Status und führt eine Ebene nach oben bzw. zurück.
 
 Ein ***Doppelklick*** des SCHWARZEN Knopfes ruft das Einstellungsmenü für die Parameter auf. Wird das vom Startmenü (bzw. einem Untermenü) aus gemacht, können alle Parameter geändert werden. Ist man gerade in einem aktiven Modus, werden nur die Parameter angezeigt, die für den aktuellen Modus relevant sind.
 
@@ -71,7 +72,7 @@ Ein ***Doppelklick*** des SCHWARZEN Knopfes ruft das Einstellungsmenü für die 
 
 Mit der zusätzlichen Taste **ROT (Power / Vol / Scroll)** kann man schnell zwischen **Geschwindigkeitsregelung** und **Lautstärkeregelung** mit einem einzigen kurzen ***Klick*** umschalten.
 
-Ein ***langes Drücken*** wechselt die Anzeige und den Encoder in den **Scroll-Modus** (die Anzeige verfügt über einen Puffer von 15 Zeilen und normalerweise sind nur die unteren drei Zeilen zu sehen; im Scroll-Modus kann man zurück blättern und so die vorherigen Zeilen ansehen: Befindet man sich im Scroll-Modus  wird ganz rechts im Display eine **Scroll-Leiste** angezeigt, die ungefähr angibt, wo man sich innerhalb der 15 Zeilen des Textpuffers befindet. Durch erneutes* Klicken* im Scroll-Modus verlässt man diesen wieder, und der Drehgeber dient wieder zur Geschwindigkeitssteuerung.
+Ein ***langes Drücken*** wechselt die Anzeige und den Encoder in den **Scroll-Modus** (die Anzeige verfügt über einen Puffer von 15 Zeilen und normalerweise sind nur die unteren drei Zeilen zu sehen; im Scroll-Modus kann man zurück blättern und so die vorherigen Zeilen ansehen: Befindet man sich im Scroll-Modus, wird ganz rechts im Display eine **Scroll-Leiste** angezeigt, die ungefähr angibt, wo man sich innerhalb der 15 Zeilen des Textpuffers befindet. Durch erneutes* Klicken* im Scroll-Modus verlässt man diesen wieder, und der Drehgeber dient wieder zur Geschwindigkeitssteuerung.
 
 Während man sich im Menü befindet (z.B. unmittelbar nach dem Einschalten), verfügt die **ROTE Taste** über einige zusätzliche Funktionen (weitere Informationen dazu im Abschnitt **Startmenü**):
 
@@ -323,7 +324,7 @@ Auf der linken Seite der Statusanzeige wird oben ein schwarzes Rechteck angezeig
 
 Die vom Decoder erkannte aktuelle Geschwindigkeit wird in der Statuszeile als WpM angezeigt. Wird der Decoder Modus verlassen, wird diese Geschwindigkeitseinstellung beibehalten. Wenn man dann auf den CW-Keyer umschaltent wird der zuletzt eingestellte Geschwindigkeitswert des Decoders benutzt. Ich bin mir nicht sicher, ob dies ein Fehler oder ein Feature ist ;-)
 
-Dieser Modus hat nur wenige Parameter (siehe den nächsten Abschnitt); der vielleicht wichtigste davon ist die Möglichkeit, die Filterbandbreite für die Tonerkennung zwischen schmal (ca 150 Hz) und breit (ca 600 Herz) umzuschalten.
+Dieser Modus hat nur wenige Parameter (siehe den nächsten Abschnitt); der vielleicht wichtigste davon ist die Möglichkeit, die Filterbandbreite für die Tonerkennung zwischen schmal (ca 150 Hz) und breit (ca 600 Hertz) umzuschalten.
 
 <div style="page-break-after: always;"></div>
 
@@ -344,7 +345,7 @@ Fettgedruckte Werte sind Standard- oder empfohlene Werte. Bei Aufruf über das S
 | -------------- | --------------------------------- | ------ |
 | Encoder Click | Legt fest, ob beim Drehen des Drehgebers bei jedem Schritt ein kurzer Click zu hören sein soll oder nicht   | Off / On |
 | Tone Pitch Hz   | Die Frequenz des Mithörtons, in Hz | Reihe von Tönen zwischen 233 und 932 Hz, entsprechend der musikalischen Noten der B Dur Tonleiter von b bis b'' (2 Oktaven) |
-| Paddle        | Auswahl zwischen dem Touch Paddle oder einem externen Paddel | Touch Paddle / Ext. Paddle |
+| External Pol.        | Erlaubt es, mit der Einstellung "Reversed" die Polarität eines externen Paddles "umzudrehen", wenn das externe Paddle verkehrt herum verdrahtet ist, damit Punkte und Striche von internem und externem Paddle auf der jeweils gleichen Seite liegen. | Normal / Reversed |
 | Paddle Polarity | Legt fest, auf welcher Seite die dits und auf welcher die dahs sind | ` _. dah-dit` / **`._ di-dah`**  |
 | Latency | Bestimmt, wie lange die Paddles nach dem Generieren des aktuellen Elements (Punkt oder Strich) Berührungen ignorieren. Ist der Wert 0, müssen die Paddles noch während des letzten Elements ausgelassen werden. Ist der Wrt 7, reagieren die Paddles erst nach 7/8 einer Punktlänge auf neuerliche Eingaben. | Ein Wert zwischen 0 and 7, das bedeutet 0/8 bis 7/8 einer Punktlänge (Defaultwert ist **4**, dh. eine halbe Puktlänge). |
 | Keyer Mode     | Bestimmt den  Iambic Mode (A oder B),  Ultimatic oder Non-Squeeze Modus; mehr dazu weiter unten  | Curtis A / Curtis B / Ultimatic / Non-Squeeze |
@@ -359,9 +360,11 @@ Fettgedruckte Werte sind Standard- oder empfohlene Werte. Bei Aufruf über das S
 | Length Calls | Maximale Länge der generierten Rufzeichen | Unlimited / max. 3 -- max. 6 |
 | Length Abbrev | Maximale Länge der zufällig erzeugten CW Abkürzungen und Q Gruppen | Unlimited / max. 2 -- max. 6 |
 | Length Words | Maximale Länge der zufällig erzeugten häufigen englischen Wörter | Unlimited / max. 2 -- max. 6 |
-| Trainer Disp | Wie der CW Generator die ausgegebene zeichen am Display darstellen soll | Display off / **Char by Char** / Word by word |
+| CW Gen Displ | Wie der CW Generator die ausgegebene zeichen am Display darstellen soll | Display off / **Char by Char** / Word by word |
 | Each Word 2x | Der CW Generator kann hiermit auf "Wortverdoppelung" geschaltet werden, zur Unterstützung des Gehörlesen Lernens | **Off** / On |
-| Randomize File |Wenn auf„On“ gesetzt, wird der File Player nach jedem Wort n Wörter auslassen (n = Zufallszahl zwischen 0 und 255) |  **Off** / On ||Echo Repeats    | Angabe, wie oft  im Echo Trainer Modus ein Wort maximal wiederholt werden soll, bevor nach Fehlern oder versäumter Eingabe ein neues Wort gewählt wird. Ist der Wert 0, wird das nächste Wort immer ein neues sein, egal ob die Antwort richtig oder falsch war.              | 0 -- 6 / Forever |
+| Randomize File |Wenn auf„On“ gesetzt, wird der File Player nach jedem Wort n Wörter auslassen (n = Zufallszahl zwischen 0 und 255) |  **Off** / On |
+|Echo Repeats    | Angabe, wie oft  im Echo Trainer Modus ein Wort maximal wiederholt werden soll, bevor nach Fehlern oder versäumter Eingabe ein neues Wort gewählt wird. Ist der Wert 0, wird das nächste Wort immer ein neues sein, egal ob die Antwort richtig oder falsch war.              | 0 -- 6 / Forever |
+|Echo Prompt    | Legt fest, wie die Aufforderung im Echop Trainer Modus erfolgt: "Sound only" (Nur Töne - Defaulteinstellung und Standard in allen früheren Versionen; am besten um das Mitlesen im Kopf zu trainieren), "Display only" (nur am Display; am Display wird gezeigt, welches Wort von dir erwartet wird, es werden keine hörbaren Morsezeichen ausgegeben; gut um Eingaben mit dem Paddle zu üben), und "Sound&Displ" (Ausgabe sowohl akustisch als auch am Display).              | **Sound only** / Display only / Sound&Displ  |
 | Confrm. Tone  | Legt fest, ob im Echo Trainer Modus eine akustische Rückmeldung erfolgen soll. Die visuelle Anzeige "OK" oder "ERR" wird in jedem Fall angezeigt. | **On** / Off |
 |Key ext TX        | Legt fest, unter welchen Umständen ein extern angeschlossener Sender getastet werden soll. | Never / CW Keyer only / Keyer&Trainer |
 | Send via LoRa | Ist hier "ON gewählt, wird alles, was der CW generator erzeugt, auch via LoRa gesendet - man kann so zB mit einem gerät etwas erzeugen, und mehrere andere geräte empfangen alle dasselbe (diese müssen dann im LoR Trx Modus betrieben werden). Achtung! Bei loRa betrieb immer darauf achten, dass eine Antenne angeschlossen ist! Bei Sendebetrieb ohne Antenne kann das loRa Modul Schaden erleiden! | LoRa Tx ON / **LoRa Tx OFF** |
@@ -370,6 +373,7 @@ Fettgedruckte Werte sind Standard- oder empfohlene Werte. Bei Aufruf über das S
 | Koch Sequence | Bestimmt die Reihenfolge der Zeichen, wenn man die Koch Methode zum lernen und Üben verwendet. | **M32 / JLMC (Just Learn Morse Code)**  /  LCWO |
 | Time Out | Nach Ablauf der eingestellten Zeit ohne jedwedes Update am Display geht das Gerät in den "Deep Sleep" Modus um weniger Strom zu verbrauchen. Es kann durch Drücken der ROTEN Taste wieder eingeschaltet werden. | No timeout / **5 min** / 10 min / 15 min |
 | Quick Start | Umgeht das Startmenü beim Einschalten, d.h. nach dem Einschalten wird sofort der Modus ausgeführt, der beim letzten Abschalten aktiv war.  | ON / **OFF** |
+| Auto Stop | Stoppt das Generieren von Morsezeichen im Generator- und im Koch-Generator-Modus nach jeder Gruppe, sodass man z.B. mit kleinen Gruppen das Gehörlesen üben kann. Fortfahren durch Berührung eines Paddles oder durch Drücken des Encoders.| ON / **OFF**|
 
 <div style="page-break-after: always;"></div>
 
@@ -378,7 +382,7 @@ Fettgedruckte Werte sind Standard- oder empfohlene Werte. Bei Aufruf über das S
 
  |  | | 
  -----      |---  |--- |---
-| Encoder Click | Tone Pitch Hz   |  Paddle        |  Paddle Polarity | 
+| Encoder Click | Tone Pitch Hz   |  External Pol.        |  Paddle Polarity | 
 | Latency | Keyer Mode     |  CurtisB DahT% | CurtisB DitT% |  
 | AutoChar Spce   | Time Out | Quick Start |
 
@@ -409,10 +413,11 @@ Mit diesem Parameter kann man jedes Verhalten zwischen den Modi Curtis A und dem
 
 | | | | |
 | ---| ---|---|---|
-| Encoder Click | Tone Pitch Hz   | Paddle        | Interword Spc |
+| Encoder Click | Tone Pitch Hz   | External Pol.        | Interword Spc |
 | Interchar Spc | Random Groups | Length Rnd Gr | Length Calls | 
-| Length Abbrev |Length Words | Trainer Disp | Each Word 2x | 
+| Length Abbrev |Length Words | CW Gen Displ | Each Word 2x | 
 |Key ext TX        | Send via LoRa |  Time Out | Quick Start |
+| Auto Stop |
 
 Anmerkungen:
 
@@ -432,31 +437,32 @@ Die ARRL und einige Morse-Trainingsprogramme verwenden etwas, das sie *"Farnswor
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   |Paddle        | Interword Spc | 
-| Interchar Spc | Trainer Disp | Randomize File | Each Word 2x | Key ext TX        |
-| Send via LoRa |  Time Out | Quick Start |
+| Encoder Click | Tone Pitch Hz   |External Pol.        | Interword Spc | 
+| Interchar Spc | CW Gen Displ | Randomize File | Each Word 2x | Key ext TX        |
+| Send via LoRa |  Time Out | Quick Start | Auto Stop |
 
 
 #### Parameter im ***Echo Trainer*** Modus
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click |  Tone Pitch Hz   | Paddle        | Paddle Polarity | 
-| Latency | Keyer Mode     |  CurtisB DahT% |  CurtisB DitT% | 
-| AutoChar Spce   | Tone Shift |  Interword Spc |  Interchar Spc | 
-| Random Groups | Length Rnd Gr | Length Calls | Length Abbrev | 
-|Length Words | Echo Repeats    | Confrm. Tone  | Time Out |
-| Quick Start |
+| Encoder Click |  Tone Pitch Hz   | External Pol.        | Paddle Polarity |
+| Latency |Keyer Mode     |  CurtisB DahT% |  CurtisB DitT% | 
+|AutoChar Spce   | Tone Shift |  Interword Spc |  Interchar Spc | 
+| Random Groups |Length Rnd Gr | Length Calls | Length Abbrev |
+| Length Words | Echo Repeats   | Echo Prompt | Confrm. Tone  | 
+|Time Out | Quick Start |
 
 
 #### Parameter im ***Echo Trainer - File Player*** Modus
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   |  Paddle        |  Paddle Polarity | 
-|Latency | Keyer Mode     |  CurtisB DahT% | CurtisB DitT% | 
-|AutoChar Spce   |  Tone Shift |  Interword Spc | Interchar Spc | 
-|Randomize File | Time Out | Quick Start |
+| Encoder Click | Tone Pitch Hz   |  External Pol.        |  Paddle Polarity | 
+| Latency |Keyer Mode     |  CurtisB DahT% | CurtisB DitT% |
+| AutoChar Spce   | Tone Shift |  Interword Spc | Interchar Spc |
+| Randomize File | Echo Repeats   | Echo Prompt | Confrm. Tone  | 
+|  Time Out |Quick Start |
 
 <div style="page-break-after: always;"></div>
 
@@ -464,27 +470,27 @@ Die ARRL und einige Morse-Trainingsprogramme verwenden etwas, das sie *"Farnswor
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   | Paddle        | Interword Spc | 
+| Encoder Click | Tone Pitch Hz   | External Pol.        | Interword Spc | 
 | Interchar Spc | Length Rnd Gr | Length Abbrev | Length Words | 
-| Trainer Disp | Each Word 2x | Key ext TX |      Send via LoRa | 
-| Koch Sequence | Time Out | Quick Start |
-
+| CW Gen Displ | Each Word 2x | Key ext TX |      Send via LoRa | 
+| Koch Sequence | Time Out | Quick Start | Auto Stop |
 
 #### Parameter im ***Koch Trainer - Echo Trainer*** Modus
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   | Paddle        |  Paddle Polarity | 
-| Latency | Keyer Mode     |  CurtisB DahT% |  CurtisB DitT% |
-| AutoChar Spce   | Tone Shift |  Interword Spc | Interchar Spc | 
-| Length Rnd Gr | Length Abbrev |  Length Words | Echo Repeats    |  
-| Confrm. Tone  | Koch Sequence | Time Out | Quick Start |
+| Encoder Click | Tone Pitch Hz   | External Pol.        |  Paddle Polarity | 
+|Latency | Keyer Mode     |  CurtisB DahT% |  CurtisB DitT% |  
+|AutoChar Spce   | Tone Shift |  Interword Spc | Interchar Spc |
+| Length Rnd Gr |  Length Abbrev |  Length Words | Echo Repeats    |  
+| Echo Prompt |Confrm. Tone  | Koch Sequence |  Time Out | 
+| Quick Start |
 
 #### Parameter im ***Transceiver - LoRa Trx*** Modus
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   | Paddle        |  Paddle Polarity |
+| Encoder Click | Tone Pitch Hz   | External Pol.        |  Paddle Polarity |
 | Latency | Keyer Mode     |  CurtisB DahT% |  CurtisB DitT% |  
 |AutoChar Spce   | Tone Shift |  Time Out | Quick Start |
 
@@ -492,7 +498,7 @@ Die ARRL und einige Morse-Trainingsprogramme verwenden etwas, das sie *"Farnswor
 
 | | | | |
 | -------------- | ---|---|---|
-| Encoder Click | Tone Pitch Hz   |  Paddle        |  Paddle Polarity |
+| Encoder Click | Tone Pitch Hz   |  External Pol.        |  Paddle Polarity |
 | Latency |Keyer Mode     | CurtisB DahT% |  CurtisB DitT% |
 |AutoChar Spce   | Tone Shift |  Bandwidth |  Time Out |
 | Quick Start |

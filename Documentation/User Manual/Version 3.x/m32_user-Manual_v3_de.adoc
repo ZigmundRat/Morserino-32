@@ -96,11 +96,11 @@ Wenn du nur ein externes Paddel verwendest (bzw. auch für den Transport), könn
 |Verwende diesen Anschluss, um entweder ein externes (mechanisches) Paddel anzuschließen (Spitze ist linkes Paddel, Ring ist rechtes Paddel, Hülse ist Masse),
 oder eine einfache Morsetaste (Spitze ist die Taste).
 Mit einer einfachen Taste kannst du mit dem CW-Decoder die Qualität deiner Eingabe überwachen!
-**Bitte beachte, dass für andere Funktionen (Echo-Trainer, Transceiver)  einfache Morsetasten derzeit NICHT unterstützt werden!**
+
 
 |11
 |Serielle Schnittstelle
-|Man ein Kabel (direkt oder über einen 4-poligen Steckverbinder) an ein externes serielles Gerät, z.B. ein GPS-Empfängermodul, anschließen (dies wird derzeit von der Software nicht unterstützt, ist aber nicht sehr schwer zu realisieren). Die 4 Pole sind T (Transmit), R (Receive), + und - (3,3V Stromversorgung vom Heltec-Modul).
+|Man kann ein Kabel (direkt angelötet oder über einen 4-poligen Steckverbinder) an ein externes serielles Gerät, z.B. ein GPS-Empfängermodul, anschließen (dies wird derzeit von der Software nicht unterstützt, ist aber nicht sehr schwer zu realisieren). Die 4 Pole sind T (Transmit), R (Receive), + und - (3,3V Stromversorgung vom Heltec-Modul).
 
 |12
 |Reset-Taste
